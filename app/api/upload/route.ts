@@ -5,11 +5,9 @@ import fs from 'fs-extra'
 import path from 'path'
 import { promisify } from 'util'
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-}
+// Route segment config - bodyParser is handled automatically in App Router
+export const runtime = 'nodejs'
+export const maxDuration = 300 // 5 minutes for large file uploads
 
 const readFile = promisify(fs.readFile)
 const mkdir = promisify(fs.mkdir)
